@@ -32,7 +32,23 @@
 <a href = "<%= path_to_next_page(@events) %>" class = "next">
   Next
 </a>
-
+<div class = "wrapper">
+<span class = "contents_title">開催予定のイベント</span>
+  <% @events.each do |event| %>
+    <div id = "event_card" class="card position_card" style="width: 20rem;">
+      <% if event.status == true %>
+        <%= image_tag  event.image , :class=> "rcard-img-top",:size => '300x250' %>
+      <% else %>
+        <%= image_tag "/images/#{event.image.to_s.split('/')[5]}", :class=> "rcard-img-top",:size => '300x250'%>
+      <% end %>
+      <div class="card-body">
+        <p class="card-text"><%= event.eventday.month %>月<%= event.eventday.day %>日</p>
+        <span class="card-title" data-title = "#{event.name}"><%= event.name %></span>
+        <a href="#" class="btn btn-primary">イベント詳細</a>
+      </div>
+    </div>
+  <% end %>
+</div>
 <div class = "contents_detail">
 <span class = "contents_title">インストラクターの紹介</span>
  <div><%= image_tag  'terry.jpg', :class=> "rounded event_info",:size => '260x260' %></div>
