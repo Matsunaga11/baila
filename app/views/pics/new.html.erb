@@ -1,0 +1,19 @@
+                <style>
+                  .dropzone {
+                    border: 2px dashed #b4bcc2;
+                    @include border-radius(4px);
+                  }
+              </style>
+                <script type="text/javascript">
+                  Dropzone.options.myDropzone = {
+                    parallelUploads: 1,
+                    maxFiles: 5,
+                    addRemoveLinks: true,
+                  };
+                </script>
+
+                <%= form_for [@event, @pic], html:{multipart: true, class:"dropzone", id:"my-dropzone" } do |f| %>
+                <%= f.hidden_field :event_id, value: @event.id %>
+                <%= link_to '次へ', root_path, class: 'btn' %>
+                <% end %>
+

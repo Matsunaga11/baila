@@ -1,0 +1,47 @@
+<%= javascript_include_tag "event_index.js" %>
+<%= render 'shared/header' %>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag  'DD5.jpg', :class=> "d-block w-100",:size => '700x500' %>
+    </div>
+    <div class="carousel-item">
+     <%= image_tag  'daniel.jpg', :class=> "d-block w-100",:size => '700x500' %>
+    </div>
+    <div class="carousel-item">
+    <%= image_tag  'daniel2.jpg', :class=> "d-block w-100",:size => '700x500' %>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<a href = "<%= path_to_prev_page(@events) %>" class = "prev" >
+  Prev
+  </a>
+<a href = "<%= path_to_next_page(@events) %>" class = "next">
+  Next
+</a>
+
+<div class = "contents_detail">
+<span class = "contents_title">インストラクターの紹介</span>
+ <div><%= image_tag  'terry.jpg', :class=> "rounded event_info",:size => '260x260' %></div>
+  <div><%= image_tag  'terry.jpg', :class=> "rounded event_info",:size => '260x260' %></div>
+  <div><%= image_tag  'terry.jpg', :class=> "rounded event_info",:size => '260x260' %></div>
+</div>
+<div class = "contents_detail">
+<span class = "contents_title">ダンススタジオ一覧</span>
+ <div><%= image_tag  'pepe2.jpg', :class=> "rounded event_info",:size => '260x260' %></div>
+  <div><%= image_tag  'pepe2.jpg', :class=> "rounded event_info",:size => '260x260' %></div>
+  <div><%= image_tag  'pepe2.jpg', :class=> "rounded event_info",:size => '260x260' %></div>
+</div>
