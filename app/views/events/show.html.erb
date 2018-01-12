@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @event.name %>
@@ -17,8 +15,11 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @event.image %>
+    <% if @event.status == false %>
+          <%= image_tag "/images/#{@event.image.to_s.split('/')[5]}", :class=> "rcard-img-top",:size => '300x250'%>
+    <% else %>
+           <%= image_tag  event.image , :class=> "rcard-img-top",:size => '300x250' %>
+    <% end %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

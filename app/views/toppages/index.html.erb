@@ -44,20 +44,12 @@
       <div class="card-body">
         <p class="card-text"><%= event.eventday.month %>月<%= event.eventday.day %>日</p>
         <span class="card-title" data-title = "#{event.name}"><%= event.name %></span>
-        <a href="#" class="btn btn-primary">イベント詳細</a>
+        <%= link_to 'イベント詳細', event_path(event), class: "btn btn-primary" %>
       </div>
     </div>
   <% end %>
 </div>
-<div class = "contents_detail">
-<span class = "contents_title">インストラクターの紹介</span>
- <div><%= image_tag  'terry.jpg', :class=> "rounded event_info",:size => '260x260' %></div>
-  <div><%= image_tag  'terry.jpg', :class=> "rounded event_info",:size => '260x260' %></div>
-  <div><%= image_tag  'terry.jpg', :class=> "rounded event_info",:size => '260x260' %></div>
-</div>
-<div class = "contents_detail">
-<span class = "contents_title">ダンススタジオ一覧</span>
- <div><%= image_tag  'pepe2.jpg', :class=> "rounded event_info",:size => '260x260' %></div>
-  <div><%= image_tag  'pepe2.jpg', :class=> "rounded event_info",:size => '260x260' %></div>
-  <div><%= image_tag  'pepe2.jpg', :class=> "rounded event_info",:size => '260x260' %></div>
-</div>
+
+<span class = "secondtitle">インストラクターの紹介</span>
+   <div><%= image_tag  'terry.jpg', :class=> "rounded instructor_info",:size => '260x260' %></div>
+
