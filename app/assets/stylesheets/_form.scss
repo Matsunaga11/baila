@@ -1,5 +1,5 @@
 .form_wrapper{
-text-align: center;
+text-align: left;
 }
 
 .form_submit_button{
@@ -25,15 +25,7 @@ background-color: rgb(186, 186, 186);
 margin-top:20px;
 }
 
-.field{
-display:inline-block;
-}
-
-.field_input{
-display:inline;
-}
-
-.field_block{
-  display:block;
+.form_under_wrapper{
+  margin-left:40%;
 }
 

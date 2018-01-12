@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all.page(params[:page]).per(6)
+   @events = Event.where.not(name: [nil, ""]).page(params[:page]).per(6)
      respond_to do |format|
      format.html
      format.json
@@ -73,6 +73,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :eventday, :place, :image,:prefecture, :address).merge(status: 1)
+      params.require(:event).permit(:name, :eventday, :place, :image,:prefecture, :address, :detail).merge(status: 1, user_id: current_user.id)
     end
 end
