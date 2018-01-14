@@ -1,3 +1,53 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <% if @event.status == false %>
+          <%= image_tag "/images/#{@event.image.to_s.split('/')[5]}", :class=> "d-block w-100",:size => '300x250'%>
+      <% else %>
+           <%= image_tag  @event.image , :class=> "d-block w-100",:size => '350x250' %>
+      <% end %>
+    </div>
+    <% if @event.pics.present? %>
+      <div class="carousel-item">
+        <%= image_tag  @event.pics.first.subimage , :class=> "d-block w-100",:size => '350x250' %>
+      </div>
+    <% end %>
+    <% if @event.pics.second.present? %>
+      <div class="carousel-item">
+        <%= image_tag  @event.pics.second.subimage , :class=> "d-block w-100",:size => '350x250' %>
+      </div>
+    <% end %>
+    <% if @event.pics.third.present? %>
+      <div class="carousel-item">
+        <%= image_tag  @event.pics.third.subimage , :class=> "d-block w-100",:size => '350x250' %>
+      </div>
+    <% end %>
+    <% if @event.pics.fourth.present? %>
+      <div class="carousel-item">
+        <%= image_tag  @event.pics.fourth.subimage , :class=> "d-block w-100",:size => '350x250' %>
+      </div>
+    <% end %>
+    <% if @event.pics.fifth.present? %>
+      <div class="carousel-item">
+        <%= image_tag  @event.pics.fifth.subimage , :class=> "d-block w-100",:size => '350x250' %>
+      </div>
+    <% end %>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
 <p>
   <strong>Name:</strong>
   <%= @event.name %>
@@ -13,13 +63,4 @@
   <%= @event.place %>
 </p>
 
-<p>
-  <strong>Image:</strong>
-    <% if @event.status == false %>
-          <%= image_tag "/images/#{@event.image.to_s.split('/')[5]}", :class=> "rcard-img-top",:size => '300x250'%>
-    <% else %>
-           <%= image_tag  event.image , :class=> "rcard-img-top",:size => '300x250' %>
-    <% end %>
-</p>
-
-<%= link_to 'Back', events_path %>
+<%= link_to 'Back', root_path %>
