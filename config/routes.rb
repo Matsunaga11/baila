@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     collection do
       get 'event_created'
     end
+    collection do
+      get 'search'
+    end
     resources :pics
   end
   resources :toppage, only: [:index] do

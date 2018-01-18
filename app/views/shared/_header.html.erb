@@ -5,15 +5,23 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
+        <%= image_tag  'bailamos.png',:size => '180x50' %>
+      </li>
+      <li>
+      <%= form_tag('/events/search', method: :get) do %>
+       <input class="search__query" name="keyword" placeholder="イベント名で検索" type="text" value=""><button class="btn-search" title="検索" type="submit"><i class="icon-search"></i></button></input>
+      <% end %>
+      </li>
+      <li class="nav-item letter">
       <%= link_to "Home", root_path, class: 'nav-link' %>
       </li>
-      <li class="nav-item">
+      <li class="nav-item letter">
         <a class="nav-link" href="#">lesson</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item letter">
         <a class="nav-link" href="#">teacher</a>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown letter">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           イベント
         </a>
@@ -24,18 +32,18 @@
           <%= link_to "作成イベントの編集", event_created_events_path, class: 'dropdown-item' %>
         </div>
       </li>
-      <li class="nav-item">
+      <li class="nav-item letter">
         <a class="nav-link disabled" href="#">Space</a>
       </li>
       <% if user_signed_in? %>
-        <li class="nav-item">
+        <li class="nav-item letter">
          <%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: 'nav-link' %>
         </li>
       <% else %>
-        <li class="nav-item">
+        <li class="nav-item letter">
             <%= link_to "ログイン", new_user_session_path, class: 'nav-link' %>
         </li>
-        <li class="nav-item">
+        <li class="nav-item letter">
           <%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %>
         </li>
       <% end %>

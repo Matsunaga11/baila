@@ -1,9 +1,5 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
+<%= render 'shared/header' %>
+<div id="carouselExampleIndicators" class="carousel slide showcarousel" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <% if @event.status == false %>
@@ -47,20 +43,28 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @event.eventday %>
-</p>
-
-<p>
-  <strong>Place:</strong>
-  <%= @event.place %>
-</p>
-
-<%= link_to 'Back', root_path %>
+<hr>
+<div class = "event_contents_wrapper">
+  <p>
+    <strong class = "event_title_showpage"><%= @event.name %></strong>
+  </p>
+<hr>
+  <p class = "event_date_showpage">
+    <strong>Date:</strong>
+    <%= @event.eventday.month %>月<%= @event.eventday.day %>日
+  </p>
+<hr>
+  <p class = "event_date_showpage">
+    <strong>Place:</strong>
+    <%= @event.place %>
+  </p>
+  <p class = "event_date_showpage">
+    <strong>住所:</strong>
+    <%= @event.address %>
+  </p>
+<hr>
+  <p class = "event_date_showpage">
+    <strong>詳細:</strong>
+    <%= @event.detail %>
+  </p>
+</div>
