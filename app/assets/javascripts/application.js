@@ -17,4 +17,9 @@
 //= require turbolinks
 //= require dropzone
 //= require components
+//= require jquery-ui
+// require jquery.ui.core
+// require jquery.ui.effect
+//= require jquery-ui/widgets/datepicker
+//= require jquery-ui/i18n/datepicker-ja
 // require_tree .

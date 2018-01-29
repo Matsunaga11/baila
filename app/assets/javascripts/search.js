@@ -1,5 +1,4 @@
-$(function() {
-  function buildHTML(event){
+function buildHTML(event){
     if(event.status == true){
       var event_name =`
       <div id = "event_card" class="card position_card" style="width: 20rem;">
@@ -23,6 +22,8 @@ $(function() {
      $(".each_wrapper").append(event_name);
     }
   };
+
+$(function() {
   $(".search__query").on("keyup", function(e) {
     e.preventDefault();
     var input = $(".search__query").val();
@@ -44,3 +45,23 @@ $(function() {
     }
   });
 });
+
+$(function() {
+$("#datepicker").on("change", function(e) {
+  e.preventDefault();
+  var day_input = $("#datepicker").val();
+  $.ajax({
+      type: 'GET',
+      url: '/events/search',
+      data: { date: day_input },
+      dataType: 'json'
+    })
+  .done(function(data) {
+     $(".each_wrapper").empty();
+     $(data).each(function(i, event){
+          buildHTML(event);
+      });
+    })
+  });
+});
+

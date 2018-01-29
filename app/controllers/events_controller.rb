@@ -66,7 +66,11 @@ end
   end
 
   def search
-   @search_events = Event.where('name LIKE(?)', "%#{params[:keyword]}%").limit(5)
+    if params[:keyword].present?
+   @search_events = Event.where('name LIKE(?)', "%#{params[:keyword]}%")
+    else
+    @search_events = Event.where(eventday:params[:date])
+    end
    respond_to do |format|
      format.html
      format.json

@@ -1,6 +1,14 @@
 <%= javascript_include_tag "search.js" %>
 <%= javascript_include_tag "event_index.js" %>
   <%= render 'shared/header' %>
+  <script>
+  $(function() {
+    $("#datepicker").datepicker();
+    $("#datepicker").datepicker("option", "showOn", 'button');
+    $("#datepicker").datepicker("option", "buttonImageOnly", true);
+    $("#datepicker").datepicker("option", "buttonImage", '/images/calendar.png');
+  });
+</script>
   <div id = "event_search_result"></div>
 <a href = "<%= path_to_prev_page(@events) %>" class = "prev" >
   Prev
@@ -8,8 +16,13 @@
 <a href = "<%= path_to_next_page(@events) %>" class = "next">
   Next
 </a>
+
 <div class = "wrapper">
-<span class = "contents_title">開催予定のイベント</span>
+  <div class = "button_wrapper">
+    <div class = "search_date" >日付<input type="hidden" id="datepicker" ></div>
+    <div class = "search_place">場所</div>
+    <div class = "search_instructor">インストラクター</div>
+  </div>
   <div class = "each_wrapper">
     <% @events.each do |event| %>
       <div id = "event_card" class="card position_card" style="width: 20rem;">
