@@ -109,3 +109,56 @@ margin-top:40px;
   display: block;
 
 }
+
+.search_date{
+padding: 5px 15px;
+background: white;
+border:solid 2px gray;
+display:inline-block;
+color:gray;
+border-radius: 5px;
+margin-left:20.391px;
+cursor: pointer;
+}
+
+.search_place{
+padding: 5px 15px;
+background: white;
+border:solid 2px gray;
+display:inline-block;
+color:gray;
+border-radius: 5px;
+margin-left:20.391px;
+cursor: pointer;
+}
+
+.search_instructor{
+padding: 5px 15px;
+background: white;
+border:solid 2px gray;
+display:inline-block;
+color:gray;
+border-radius: 5px;
+margin-left:20.391px;
+cursor: pointer;
+}
+
+.button_wrapper{
+margin-top:20px;
+margin-bottom:10px;
+}
+
+.ui-widget-content {
+  border: 1px solid white;
+  background: #FFA500;
+  color: white;
+}
+
+.ui-widget-content a {
+  color: white;
+}
+.ui-datepicker-trigger{
+  width:21px;
+  height:21px;
+  margin-left:2px;
+}

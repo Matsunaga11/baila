@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:index, :show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   # GET /events
   # GET /events.json
@@ -64,6 +64,18 @@ end
       format.json { head :no_content }
     end
   end
+
+  def search
+    if params[:keyword].present?
+   @search_events = Event.where('name LIKE(?)', "%#{params[:keyword]}%")
+    else
+    @search_events = Event.where(eventday:params[:date])
+    end
+   respond_to do |format|
+     format.html
+     format.json
+   end
+ end
 
   private
     # Use callbacks to share common setup or constraints between actions.
